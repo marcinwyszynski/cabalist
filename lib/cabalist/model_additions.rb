@@ -5,9 +5,19 @@ module Cabalist
     
     def acts_as_cabalist(options = {})
       
+      # Make sure that all required options are set
+      raise 'No features specified' \
+          unless options.has_key?(:features)
+      raise 'Expectin an Array of features' \
+          unless options[:feature].instance_of?(Array)
+      raise 'No class variable specified' \
+          unless options.has_key?(:class_variable)
+
+      # Set some sensible defaults for other options, if required
       collection = options[:collection] || :manually_classified
       algorithm  = options[:algorithm]  || :id3
       
+      # Select an algorithm for the classifier
       classifier = case algorithm
                    when :hyperpipes then ::Ai4r::Classifiers::Hyperpipes
                    when :ib1        then ::Ai4r::Classifiers::IB1
@@ -28,28 +38,34 @@ module Cabalist
       scope :not_classified,
           where("autoclassified_at IS NULL AND %s IS NULL" %
           options[:class_variable])
-      
+
+      # Return object as an Array of features
       send(:define_method, :get_features, lambda {
         options[:features].map { |f| self.send(f) }
       })
       
+      # Return the value of a class variable
       send(:define_method, :get_class_variable, lambda {
         self.send(options[:class_variable])
       })
       
+      # Set the value of the class variable
       send(:define_method, :set_class_variable, lambda { |c|
         self.send("#{options[:class_variable]}=".to_sym, c) or self
       })
       
+      # Return an Array of feature names (attributes/methods)
       send(:define_singleton_method, :get_feature_names, lambda {
         options[:features]
       })
       
+      # Return the name of a class variable
       send(:define_singleton_method, :get_class_variable_name, lambda {
         options[:class_variable]
       })
       
-      send(:define_singleton_method, :classifier, lambda {
+      # Build a prediction model from scratch
+      send(:define_singleton_method, :build_model, lambda {
         classifier::new.build(
           Ai4r::Data::DataSet::new({
             :data_items  => send(collection).map do |el| 
@@ -58,6 +74,20 @@ module Cabalist
             :data_labels => get_feature_names + [get_class_variable_name]
           })
         )
+      })
+      
+      # Build a prediction model and store it in the LevelDB
+      send(:define_singleton_method, :train_model, lambda {
+        _model = build_model
+        Cabalist::Configuration.instance.database.put(name,
+            Marshal::dump(_model))
+        return model
+      })
+      
+      # Return prediction model for the class
+      send(:define_singleton_method, :classifier, lambda {
+        _stored = Cabalist::Configuration.instance.database.get(name)
+        return _stored ? _stored : train_mode
       })
 
       # Show possible values for the classification.
@@ -70,7 +100,7 @@ module Cabalist
       # for any new object.
       send(:define_method, :classify, lambda {
         begin
-          self.class::classifier.eval(get_signals)
+          self.class::classifier.eval(get_features)
         rescue
           nil
         end
