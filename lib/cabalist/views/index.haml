@@ -1,0 +1,21 @@
+.content
+
+  %h1 Dashboard
+
+  %ul.classifiers
+    - @classes.each do |klass|
+      %li
+        %ul.specs
+          %lh
+            = klass.to_s
+            classifier
+          %li
+            Classifies the
+            %span.attr_name= klass.classifier.data_set.data_labels[-1]
+            attribute
+          %li
+            = klass.classifier.data_set.data_items.length 
+            data points
+          %li
+            Signals:
+            %span.attr_name= klass.classifier.data_set.data_labels[0...-1].join(', ')

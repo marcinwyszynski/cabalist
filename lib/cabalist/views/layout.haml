@@ -1,0 +1,39 @@
+!!! 5
+
+%html
+  %head
+    %title= "Cabalist | #{@app_name}"
+    %link{ :href => '/stylesheets/cabalist.css', 
+           :rel  => 'stylesheet', 
+           :type => 'text/css' }/    
+    %script{ :src  => '/assets/jquery.js', 
+             :type => 'text/javascript' }
+    %script{ :src  => '/javascripts/cabalist.js', 
+             :type => 'text/javascript' }
+  %body
+    %header
+      .container
+        %a.logo{ :href => '/cabalist' }
+          %img{ :src => '/images/logo.png' }/
+        %nav
+          - @classes.each do |klass|
+            %a{ :href => "/cabalist/#{klass.to_s.downcase}/all" }= klass.to_s.pluralize
+    
+    = yield
+    
+    %footer
+      %p
+        Cabalist is an open source Ruby library developed by
+        %a{ :href => 'http://github.com/marcinwyszynski/' } Marcin Wyszynski. 
+        AI algorithms come from
+        %a{ :href => 'http://ai4r.rubyforge.org/' } ai4r
+        gem. Layout shamesly stolen from 
+        = succeed '.' do
+          %a{ :href => 'http://redis.io/' } redis.io
+        More credits available 
+        = succeed '.' do
+          %a{ :href => '#' } here
+      .ncirl
+        %span National College of Ireland
+        %a{ :href => 'http://www.ncirl.ie/' }
+          %img{ :alt => 'National College of Ireland', :src => '/images/ncirl.png' }/

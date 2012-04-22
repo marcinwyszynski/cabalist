@@ -1,0 +1,11 @@
+class AddCabalistTo<%= name.pluralize %> < ActiveRecord::Migration
+
+  def up
+    add_column :<%= name.tableize %>, :autoclassified_at, :timestamp
+  end
+
+  def down
+    remove_column :<%= name.tableize %>, :autoclassified_at
+  end
+  
+end

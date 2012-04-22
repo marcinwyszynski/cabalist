@@ -1,0 +1,82 @@
+.content
+
+  %ul.scopes
+    %lh= "#{klass} classifier:"
+    %li
+      %a{ :href => "/cabalist/#{klass.to_s.downcase}/all" } All
+    %li
+      %a{ :href => "/cabalist/#{klass.to_s.downcase}/none" } Not Classified
+    %li
+      %a{ :href => "/cabalist/#{klass.to_s.downcase}/manual" } Manually Classified
+    %li
+      %a{ :href => "/cabalist/#{klass.to_s.downcase}/auto" } Automatically Classified
+
+  - unless @collection.empty?
+    %table.cabalist_records
+      %thead
+        %tr
+          %td ID
+          - klass.classifier.data_set.data_labels.each do |l|
+            %td= l.to_s.humanize.titlecase
+          %td.center Actions
+      %tbody
+        - @collection.each do |el|
+          %tr
+            %td= el.id
+            - el.get_features.each do |feature|
+              %td= feature.to_s
+            %td= el.get_class_variable.to_s
+            %td.center
+            
+              %img{ :src   => '/images/eye_12x9.png', 
+                    :class => 'show_icon',
+                    :title =>  'Show classified object' }/
+              .overlay.show_widget
+                .dialog-widget
+                  .dialog-content
+                    %img{ :src => '/images/x_14x14.png', :class => 'close_icon' }/
+                    %pre= el.attributes.to_yaml
+                    
+              %img{ :src   => '/images/pen_12x12.png', 
+                    :class => 'edit_icon',
+                    :title => 'Manually classify' }/
+              .overlay.edit_widget
+                .dialog-widget
+                  .dialog-content
+                    %img{ :src => '/images/x_14x14.png', :class => 'close_icon' }/
+                    
+                    -# This form is for manual classification of Cabalist objects. --------- #
+                    %form{ :action => "/cabalist/#{klass.to_s.downcase}/teach/#{el.id}",
+                           :method => 'POST' }
+                      %p.label= "#{el.class.get_class_variable_name.to_s.humanize.titlecase}:"
+                      %span.label_info Use existing class:
+                      %select{ :name => 'classification' }
+                        %option{ :value    => nil } - choose classification -
+                        - el.class.classifier.data_set.build_domain(-1).to_a.each do |opt|
+                          %option{ :value    => opt.to_s, 
+                                   :selected => (el.get_class_variable == opt) }= opt
+                      %p
+                        %span.label_info ...or add a new one:
+                        %input{ :name => 'classification_freeform', :value => '' }/
+                      %p
+                        %input{ :type => 'submit', :value => 'Teach!' }/
+              
+              -# This is the for for autoclassification of Cabalist objects. --------------- #
+              %form{ :action => "/cabalist/#{klass.to_s.downcase}/autoclassify/#{el.id}",
+                     :method => 'POST', :class => 'autoclassify' }
+                %input{ :type  => 'image', 
+                        :src   => '/images/target_12x12.png', 
+                        :title => "Autoclassify (#{el.classify.to_s})" }/
+              
+            
+    %table.kaminari_nav
+      %tr
+        %td.previous
+          - if page.to_i > 1
+            %a{ :href => "/cabalist/#{klass.to_s.downcase}/#{scope}/#{page-1}" } &laquo; Previous
+        %td.next
+          - if (page * Cabalist::Frontend::PER_PAGE) < total
+            %a{ :href => "/cabalist/#{klass.to_s.downcase}/#{scope}/#{page+1}" } Next &raquo;
+            
+  - else
+    %p No data here yet.

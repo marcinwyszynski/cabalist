@@ -1,0 +1,197 @@
+body {
+  background: #DDD;
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 43px 0px 0px;
+}
+
+a       { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #323232), color-stop(100%, #000000));
+  box-shadow: #999999 0px 4px 8px 0;
+  position: fixed;
+  width: 100%;
+  height: 43px;
+  top: 0;
+  left: 0;
+  padding: 0px 10px;
+  z-index: 1000;
+}
+
+header nav { 
+  float: left; 
+  border-left: 1px solid #323232;
+  padding: 4px 0px 4px 20px;
+}
+header img { 
+  float: left; 
+  padding: 4px 20px 4px 0px;
+  border-right: 1px solid black;
+}
+nav a { 
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 35px;
+  color: #ddd;
+  margin: 4px 0px;
+  padding-right: 20px;
+  text-shadow: black 0px 1px 1px;
+}
+header a:hover { color: white; }
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+h1 { margin: .3em 0 .6em; }
+
+.content {
+  background-color: #FAFAFA;
+  box-shadow: #cccccc 0px 0px 10px 0;
+  color: #333;
+  margin: 0 auto;
+  max-width: 880px;
+  padding: 10px 10px;
+}
+
+footer {
+  background: url(../images/symbol.png) no-repeat left top;
+  padding: 10px 10px 10px 62px;
+  max-width: 840px;
+  margin: 5px auto;
+  color: #777;
+  position: relative;
+  font-size: 11px;
+}
+footer a { color: rgb(110, 180, 30); }
+footer p { width: 400px; margin-top: 0px; }
+.ncirl {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 10px;
+}
+.ncirl span { float: right; }
+.ncirl img { float: right; clear: right; }
+
+table.cabalist_records {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.cabalist_records td {
+  border: 1px solid #CCC;
+  font-size: 80%;
+  padding: 0.4em 0.6em;
+}
+
+table.cabalist_records tr:nth-of-type(even) td {
+  background: #EEE;
+}
+
+table.cabalist_records thead td {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #DEDEDE), color-stop(100%, #CCC));
+  font-weight: bold;
+  text-shadow: white 0px 1px 1px;
+}
+
+ul.scopes {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #DEDEDE), color-stop(100%, #AAA));
+  font-size: 90%;
+  text-shadow: white 0px 1px 1px;
+  list-style-type: none;
+  margin: -10px -10px 10px -10px;
+  padding: 5px;
+}
+
+ul.scopes lh {
+  font-weight: bold;
+}
+
+ul.scopes li {
+  display: inline-block;
+  margin-left: 12px;
+}
+
+ul.scopes li a {
+  color: #333;
+}
+
+ul.scopes li a:hover {
+  color: white;
+  text-decoration: none;
+  text-shadow: #888 0px 1px 1px;
+}
+
+table.kaminari_nav {
+  width: 100%;
+  font-size: 80%;
+}
+
+table.kaminari_nav .next {
+  text-align: right;
+}
+
+pre {
+ margin: 0;
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap:   break-word;     /* Internet Explorer 5.5+ */
+}
+
+.center {
+  text-align: center;
+}
+
+.overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.dialog-widget {
+  background: #FAFAFA;
+  border: 5px solid #DDD;
+  position: absolute;
+  left: 30%;
+  top: 100px;
+  padding: 20px;
+  width: 40%;
+  text-align: left;
+}
+
+.dialog-widget pre {
+  font-size: 1.2em;
+}
+
+.dialog-content {
+  position: relative;
+}
+
+p.label {
+  font-weight: bold;
+  margin: 0.3em;
+}
+
+.close_icon {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+}
+
+form.autoclassify {
+  display: inline;
+}
+
+span.label_info {
+  display: inline-block;
+  width: 130px;
+}
