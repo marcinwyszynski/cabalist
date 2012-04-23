@@ -1,6 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/marcinwyszynski/cabalist.png?branch=master)](http://travis-ci.org/marcinwyszynski/cabalist)
-
-Introduction to Cabalist
+Introduction to Cabalist [![Build Status](https://secure.travis-ci.org/marcinwyszynski/cabalist.png?branch=master)](http://travis-ci.org/marcinwyszynski/cabalist)
 ------------------------
 
 Cabalist is conceived as a simple way of adding some smarts (machine learning capabilities) to your Ruby on Rails models without having to dig deep into mind-boggling AI algorithms. Using it is meant to be as straightforward as adding a few lines to your existing code and running a Rails generator or two.
