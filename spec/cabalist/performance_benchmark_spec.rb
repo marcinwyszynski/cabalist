@@ -36,12 +36,12 @@ describe Cabalist::ModelAdditions do
       # - all ginger male cats are good
       def self.create_test_cats
         result = []
-        1000.times { result << Cat::create(:color => 'white', :gender => 'female',  :evil => false) }
-        1000.times { result << Cat::create(:color => 'white', :gender => 'male',    :evil => false) }
-        1000.times { result << Cat::create(:color => 'black', :gender => 'female',  :evil => true) }
-        1000.times { result << Cat::create(:color => 'black', :gender => 'male',    :evil => true) }
-        1000.times { result << Cat::create(:color => 'grey', :gender => 'female',   :evil => false) }
-        1000.times { result << Cat::create(:color => 'grey', :gender => 'male',     :evil => true) }
+        1000.times { result << Cat::create(:color => 'white',  :gender => 'female', :evil => false) }
+        1000.times { result << Cat::create(:color => 'white',  :gender => 'male',   :evil => false) }
+        1000.times { result << Cat::create(:color => 'black',  :gender => 'female', :evil => true) }
+        1000.times { result << Cat::create(:color => 'black',  :gender => 'male',   :evil => true) }
+        1000.times { result << Cat::create(:color => 'grey',   :gender => 'female', :evil => false) }
+        1000.times { result << Cat::create(:color => 'grey',   :gender => 'male',   :evil => true) }
         1000.times { result << Cat::create(:color => 'ginger', :gender => 'female', :evil => true) }
         1000.times { result << Cat::create(:color => 'ginger', :gender => 'male',   :evil => false) }
         return result
