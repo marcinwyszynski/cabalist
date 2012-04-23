@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Cabalist::VERSION
   s.authors     = ["Marcin Wyszynski"]
   s.email       = ["marcin.pixie@gmail.com"]
-  s.homepage    = "http://https://github.com/marcinwyszynski/cabalist"
+  s.homepage    = "http://github.com/marcinwyszynski/cabalist"
   s.summary     = %q{TODO: Write a gem summary}
   s.description = %q{TODO: Write a gem description}
 
