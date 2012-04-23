@@ -1,5 +1,6 @@
 require 'haml'
 require 'kaminari/sinatra'
+require 'padrino-helpers'
 require 'sinatra/base'
 
 module Cabalist
