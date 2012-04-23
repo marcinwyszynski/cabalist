@@ -20,8 +20,13 @@ Gem::Specification.new do |s|
   
   # Gem dependencies
   s.add_dependency('ai4r')
-  s.add_dependency('haml', '>= 3.0')
-  s.add_dependency('kaminari')
+  s.add_dependency('haml',     '>= 3.0')
+  s.add_dependency('kaminari', '>= 0.13.0')
   s.add_dependency('leveldb-ruby')
   s.add_dependency('sinatra')
+  
+  # Gem development dependencies
+  s.add_development_dependency('rspec')
+  s.add_development_dependency('with_model')
+  
 end

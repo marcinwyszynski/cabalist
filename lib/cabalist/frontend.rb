@@ -1,5 +1,5 @@
 require 'haml'
-require 'kaminari'
+require 'kaminari/sinatra'
 require 'sinatra/base'
 
 module Cabalist
