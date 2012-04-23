@@ -8,8 +8,8 @@ module Cabalist
       # Make sure that all required options are set
       raise 'No features specified' \
           unless options.has_key?(:features)
-      raise 'Expectin an Array of features' \
-          unless options[:feature].instance_of?(Array)
+      raise 'Expecting an Array of features' \
+          unless options[:features].instance_of?(Array)
       raise 'No class variable specified' \
           unless options.has_key?(:class_variable)
 
@@ -81,19 +81,19 @@ module Cabalist
         _model = build_model
         Cabalist::Configuration.instance.database.put(name,
             Marshal::dump(_model))
-        return model
+        return _model
       })
       
       # Return prediction model for the class
       send(:define_singleton_method, :classifier, lambda {
-        _stored = Cabalist::Configuration.instance.database.get(name)
-        return _stored ? _stored : train_mode
+        _stored = Cabalist::Configuration.instance.database.get(self.name)
+        return _stored ? Marshal.load(_stored) : train_mode
       })
 
       # Show possible values for the classification.
       define_singleton_method(
         :class_variable_domain,
-        lambda { classifier.data_set.build_domain(-1).to_a }
+        lambda { self.classifier.data_set.build_domain(-1).to_a }
       )
     
       # Create a 'classify' method which will provide a classification
@@ -117,7 +117,7 @@ module Cabalist
       # and set the autoclassification timestamp to nil so that the new entry
       # can be treated as basis for learning.
       send(:define_method, :teach, lambda { |new_class|
-        set_classification(new_class)
+        set_class_variable(new_class)
         self.autoclassified_at = nil
       })
 
