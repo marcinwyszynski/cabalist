@@ -51,7 +51,6 @@ module Cabalist
       redirect back
     end
     
-      
     get "/:class_name/all/?:page?" do
       klass = params[:class_name].titleize.constantize
       page = params[:page].to_i < 1 ? 1 : params[:page].to_i
