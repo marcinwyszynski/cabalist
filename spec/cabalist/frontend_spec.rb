@@ -67,7 +67,12 @@ describe Cabalist::Frontend do
   
   it "should automatically classify the Cat with a given ID" do
     cat = Cat.first
-    post "/cat/autoclassify/#{cat.id}", { :referer => '/cat/manual/1' }
+    post "/cat/autoclassify/#{cat.id}", {}, { :referer => '/cat/manual/1' }
+    last_response.should be_redirect
+  end
+  
+  it "should retrain the Cat classification model" do
+    post "/cat/retrain", {}, { :referer => '/cat/manual/1' }
     last_response.should be_redirect
   end
   

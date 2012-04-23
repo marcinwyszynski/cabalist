@@ -100,5 +100,12 @@ module Cabalist
       redirect back
     end
     
+    # Rebuild the model used for classification
+    post "/:class_name/retrain" do
+      klass = params[:class_name].titleize.constantize
+      klass::train_model
+      redirect back
+    end
+    
   end
 end
