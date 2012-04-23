@@ -6,7 +6,7 @@ require 'sinatra/base'
 module Cabalist
   class Frontend < Sinatra::Base
     
-    PER_PAGE ||= 25
+    PER_PAGE = 25
     
     before do
       @classes  = Cabalist::Configuration.instance.frontend_classes
