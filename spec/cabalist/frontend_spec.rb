@@ -28,8 +28,7 @@ describe Cabalist::Frontend do
   end
   
   before(:each) do
-    Cat::train_model
-    @cat = Cat.first
+    Cat::test_cats
     Cabalist::Configuration.instance.frontend_classes = [Cat]
   end
   
@@ -59,13 +58,16 @@ describe Cabalist::Frontend do
     last_response.should be_ok
   end
   
-  # it "should set the value of class variable for a Cat with a given ID" do
-  #   post "/cat/teach/#{@cat.id}", { :evil => true }, { :referer => '/cat/all/1' }
-  #   last_response.should be_redirect
-  # end
+  it "should set the value of class variable for a Cat with a given ID" do
+    cat = Cat.first
+    post "/cat/teach/#{cat.id}", { :classification => true, :classification_freeform => '' },
+                                 { :referer => '/cat/all/1' }
+    last_response.should be_redirect
+  end
   
   it "should automatically classify the Cat with a given ID" do
-    post "/cat/autoclassify/#{@cat.id}", { :referer => '/cat/manual/1' }
+    cat = Cat.first
+    post "/cat/autoclassify/#{cat.id}", { :referer => '/cat/manual/1' }
     last_response.should be_redirect
   end
   
