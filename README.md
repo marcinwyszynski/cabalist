@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/marcinwyszynski/cabalist.png?branch=master)](http://travis-ci.org/marcinwyszynski/cabalist)
+
 Introduction to Cabalist
 ------------------------
 
