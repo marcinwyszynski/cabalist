@@ -67,7 +67,7 @@ By default, the collection Cablist is going to load in order to build a predicti
                        :collection     => :cats_i_care_about
     end
 
-The other thing you can change is the algorithm used for generating predictions. By default Cabalist uses {ID3}[http://en.wikipedia.org/wiki/ID3_algorithm], a decision tree learning algorithm - a rather arbitrary choice, mind you. You can easily change it to any of the following algorithms:
+The other thing you can change is the algorithm used for generating predictions. By default Cabalist uses [ID3](http://en.wikipedia.org/wiki/ID3_algorithm), a decision tree learning algorithm - a rather arbitrary choice, mind you. You can easily change it to any of the following algorithms:
 - :hyperpipes for [Hyperpipes](http://code.google.com/p/ourmine/wiki/HyperPipes)
 - :ib1 for [Simple Instance Based Learning](http://en.wikipedia.org/wiki/Instance-based_learning)
 - :id3 for [Iterative Dichotomiser 3](http://en.wikipedia.org/wiki/ID3_algorithm)
