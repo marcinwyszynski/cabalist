@@ -87,7 +87,7 @@ module Cabalist
       # Return prediction model for the class
       send(:define_singleton_method, :classifier, lambda {
         _stored = Cabalist::Configuration.instance.database.get(self.name)
-        return _stored ? Marshal.load(_stored) : train_mode
+        return _stored ? Marshal.load(_stored) : train_model
       })
 
       # Show possible values for the classification.
