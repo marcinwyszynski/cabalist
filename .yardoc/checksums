@@ -1,9 +1,0 @@
-lib/cabalist.rb 6b9f22b6dff80ebaf6078e4a9eccdbadc25f7fba
-lib/cabalist/version.rb 7b3ee93625f1c383ac622f5ddbcde088e4f4ddbc
-lib/cabalist/railtie.rb f2b5ea7fa1c2eea80eaaedce4b13e874bd3d2881
-lib/cabalist/frontend.rb 383a8fc1409f807806d0cb4b4891dae44c44020a
-lib/cabalist/configuration.rb 8504a95b1bc7749f2813dd98a9223803b837148e
-lib/cabalist/model_additions.rb e8305d199a722186f5a8aefbde0b1a5452acc2a9
-lib/generators/cabalist/install/install_generator.rb c8951d6fcbfc1bcd39ac86eb8c71329ae0ca8ec7
-lib/generators/cabalist/classifier/classifier_generator.rb 9da51bc2d54bf9f113ad93f8ecbf2040e75327d9
-lib/generators/cabalist/install/templates/initializers/cabalist.rb 90fd24b4d212efad6be3c6d702673f945e068adb
