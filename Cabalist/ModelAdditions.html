@@ -1,0 +1,1583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Cabalist::ModelAdditions
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (M)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Cabalist.html" title="Cabalist (module)">Cabalist</a></span></span>
+     &raquo; 
+    <span class="title">ModelAdditions</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Cabalist::ModelAdditions
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/cabalist/model_additions.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+Core functionality of Cabalist.
+</p>
+<p>
+This module is a placeholder for methods that are mixed in with
+ActiveRecord::Base as well as those that are created by calling
+acts_as_cabalist method from within the class definition of an inheriting
+class.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#acts_as_cabalist-class_method" title="acts_as_cabalist (class method)">+ (void) <strong>acts_as_cabalist</strong>(opts = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Class helper to add Cabalist functionality to a Rails model.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#auto_classified-class_method" title="auto_classified (class method)">+ (ActiveRecord::Relation) <strong>auto_classified</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Automatically classified records.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_model-class_method" title="build_model (class method)">+ (Ai4r::Classifiers::Object) <strong>build_model</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Build the classification model from scratch.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_variable_domain-class_method" title="class_variable_domain (class method)">+ (Array) <strong>class_variable_domain</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Show possible values for the classification.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#classifier-class_method" title="classifier (class method)">+ (Ai4r::Classifiers::Object) <strong>classifier</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get the classification model for a given class.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_class_variable_name-class_method" title="get_class_variable_name (class method)">+ (Symbol) <strong>get_class_variable_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get name of class variable.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_feature_names-class_method" title="get_feature_names (class method)">+ (Array) <strong>get_feature_names</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get names of feature attributes.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#manually_classified-class_method" title="manually_classified (class method)">+ (ActiveRecord::Relation) <strong>manually_classified</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Manually classified records.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#not_classified-class_method" title="not_classified (class method)">+ (ActiveRecord::Relation) <strong>not_classified</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Records that have not yet been classified.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#classify-instance_method" title="#classify (instance method)">- (Object) <strong>classify</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get predicted value of the class variable.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#classify%21-instance_method" title="#classify! (instance method)">- (self) <strong>classify!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Set the class variable to the value suggested by the classifier.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_class_variable-instance_method" title="#get_class_variable (instance method)">- (Object) <strong>get_class_variable</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Value of the class variable.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_features-instance_method" title="#get_features (instance method)">- (Array) <strong>get_features</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get an array of features.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_class_variable-instance_method" title="#set_class_variable (instance method)">- (Object) <strong>set_class_variable</strong>(new_class_variable) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Set the value of the class variable.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#teach-instance_method" title="#teach (instance method)">- (Object) <strong>teach</strong>(new_class_variable) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Set the value of the class variable.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#train_model-instance_method" title="#train_model (instance method)">- (Ai4r::Classifiers::Object) <strong>train_model</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Build the classification model from scratch and store it in cache.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="acts_as_cabalist-class_method">
+  
+    + (<tt>void</tt>) <strong>acts_as_cabalist</strong>(opts = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>
+Class helper to add Cabalist functionality to a Rails model.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+An options hash.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <h3>Options Hash (<tt>opts</tt>):</h3>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:features</span>
+          <span class="type">(<tt>Array</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>required</tt>
+            
+          </span>
+          &mdash; <div class='inline'><p>
+Array of symbols representing name of the model attributes used as features
+(predictors) to train the classifier.
+</p>
+</div>
+        </tr>
+      
+        <li>
+          <span class="name">:class_variable</span>
+          <span class="type">(<tt>Symbol</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>required</tt>
+            
+          </span>
+          &mdash; <div class='inline'><p>
+Symbol representing the name of the model attribute to be predicted by the
+classifier.
+</p>
+</div>
+        </tr>
+      
+        <li>
+          <span class="name">:collection</span>
+          <span class="type">(<tt>Symbol</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>optional</tt>
+            
+          </span>
+          &mdash; <div class='inline'><p>
+Symbol representing the class method used to pull data to be used to train
+the classifier. By default, the method used will be :manually_classified
+which is a scope added by this helper call. Anything returning either an
+ActiveRecord::Relation or an Array of objects of this given class will do.
+</p>
+</div>
+        </tr>
+      
+        <li>
+          <span class="name">:algorithm</span>
+          <span class="type">(<tt>Symbol</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>optional</tt>
+            
+          </span>
+          &mdash; <div class='inline'><p>
+Symbol representing the algorithm to be used by the classifier. The library
+currently supports a number of algorithms provided by the ai4r gem.
+Accepted values are as following:
+</p>
+<ul>
+<li><p>
+:hyperpipes for Hyperpipes
+</p>
+</li>
+<li><p>
+:ib1 for Simple Instance Based Learning
+</p>
+</li>
+<li><p>
+:id3 for Iterative Dichotomiser 3
+</p>
+</li>
+<li><p>
+:one_r for One Attribute Rule
+</p>
+</li>
+<li><p>
+:prism for PRISM
+</p>
+</li>
+<li><p>
+:zero_r for ZeroR
+</p>
+</li>
+</ul>
+</div>
+        </tr>
+      
+    </ul>
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id acts_as_cabalist'>acts_as_cabalist</span><span class='lparen'>(</span><span class='id opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="auto_classified-class_method">
+  
+    + (<tt>ActiveRecord::Relation</tt>) <strong>auto_classified</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Automatically classified records.
+</p>
+<p>
+Named scope which returns objects that were classified automatically. That
+means they have their class variable value set as well as non-nil value of
+autoclassified_at attribute.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ActiveRecord::Relation</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id auto_classified'>auto_classified</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="build_model-class_method">
+  
+    + (<tt>Ai4r::Classifiers::Object</tt>) <strong>build_model</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Build the classification model from scratch.
+</p>
+<p>
+You should probably not use this method directly as it will go ahead and
+compute the classifier anew each and every time instead of looking at any
+cached versions.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Ai4r::Classifiers::Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+one of classifiers from the  Ai4r::Classifiers module, depending on the
+value (and presence) of the :algorithm option in the acts_as_cabalist
+method call.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 121</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id build_model'>build_model</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="class_variable_domain-class_method">
+  
+    + (<tt>Array</tt>) <strong>class_variable_domain</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Show possible values for the classification.
+</p>
+<p>
+This method will return all unique values of the class variable that the
+classifier knows about. If any new values have been added after the
+classifier has last been retrained, they will not find their way here.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+an Array containing all unique class variable values.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 151</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id class_variable_domain'>class_variable_domain</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="classifier-class_method">
+  
+    + (<tt>Ai4r::Classifiers::Object</tt>) <strong>classifier</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get the classification model for a given class.
+</p>
+<p>
+This method will try to find a ready model in the local cache but having
+failed that will resort to the &#8216;train_model&#8217; to create one.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Ai4r::Classifiers::Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+one of classifiers from the  Ai4r::Classifiers module, depending on the
+value (and presence) of the :algorithm option in the acts_as_cabalist
+method call.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+142</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 142</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id classifier'>classifier</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_class_variable_name-class_method">
+  
+    + (<tt>Symbol</tt>) <strong>get_class_variable_name</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get name of class variable.
+</p>
+<p>
+This method returns the class variable name (as symbol) as it has been
+passed to the acts_as_cabalist method call as :class_variable option.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 110</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id get_class_variable_name'>get_class_variable_name</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_feature_names-class_method">
+  
+    + (<tt>Array</tt>) <strong>get_feature_names</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get names of feature attributes.
+</p>
+<p>
+This method returns the Array of attribute names (as symbols) as they have
+been passed to the acts_as_cabalist method call as :features option.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+an Array of symbols representing feature names
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id get_feature_names'>get_feature_names</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="manually_classified-class_method">
+  
+    + (<tt>ActiveRecord::Relation</tt>) <strong>manually_classified</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Manually classified records.
+</p>
+<p>
+Named scope which returns objects that were classified but not
+automatically, that is they have their class variable value set but
+autoclassified_at nil.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ActiveRecord::Relation</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id manually_classified'>manually_classified</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="not_classified-class_method">
+  
+    + (<tt>ActiveRecord::Relation</tt>) <strong>not_classified</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Records that have not yet been classified.
+</p>
+<p>
+Named scope which returns objects that were classified automatically. That
+means they have their class variable value set as well as non-nil value of
+autoclassified_at attribute.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ActiveRecord::Relation</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id not_classified'>not_classified</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="classify-instance_method">
+  
+    - (<tt>Object</tt>) <strong>classify</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get predicted value of the class variable
+</p>
+<p>
+This method will query the classifier of the instance&#8217;s corresponding
+class for the predicted classification of this instance, given the value of
+its features.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+predicted value of the class variable
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 160</span>
+
+<span class='kw'>def</span> <span class='id classify'>classify</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="classify!-instance_method">
+  
+    - (<tt>self</tt>) <strong>classify!</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set the class variable to the value suggested by the classifier
+</p>
+<p>
+This method will query the classifier of the instance&#8217;s corresponding
+class for the predicted classification of this instance, given the value of
+its features and then set the class variable to that value.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the current object instance
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+169</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 169</span>
+
+<span class='kw'>def</span> <span class='id classify!'>classify!</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_class_variable-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_class_variable</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Value of the class variable.
+</p>
+<p>
+This method returns the value of an attribute passed as the :class_variable
+option of the acts_as_cabalist method call.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the value of the class variable
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 84</span>
+
+<span class='kw'>def</span> <span class='id get_class_variable'>get_class_variable</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_features-instance_method">
+  
+    - (<tt>Array</tt>) <strong>get_features</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get an array of features.
+</p>
+<p>
+Returns an Array of values which result from methods passed as the :feature
+option of the acts_as_cabalist method call. Each of this methods is called
+upon current instance and results are returned.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+array of values corresponding to attributes selected as features
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id get_features'>get_features</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="set_class_variable-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_class_variable</strong>(new_class_variable) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set the value of the class variable.
+</p>
+<p>
+This method sets the value of an attribute passed as the :class_variable
+option of the acts_as_cabalist method call to the new value.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>new_class_variable</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the new value of the class variable
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 94</span>
+
+<span class='kw'>def</span> <span class='id set_class_variable'>set_class_variable</span><span class='lparen'>(</span><span class='id new_class_variable'>new_class_variable</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="teach-instance_method">
+  
+    - (<tt>Object</tt>) <strong>teach</strong>(new_class_variable) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set the value of the class variable.
+</p>
+<p>
+This method sets the value of an attribute passed as the :class_variable
+option of the acts_as_cabalist method call to the new value and sets the
+autoclassified_at to nil so that current object is not treated as
+automatically classified.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>new_class_variable</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the new value of the class variable
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+180</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 180</span>
+
+<span class='kw'>def</span> <span class='id teach'>teach</span><span class='lparen'>(</span><span class='id new_class_variable'>new_class_variable</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="train_model-instance_method">
+  
+    - (<tt>Ai4r::Classifiers::Object</tt>) <strong>train_model</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Build the classification model from scratch and store it in cache.
+</p>
+<p>
+This method will use a &#8216;build_model&#8217; call to create a model
+from scratch but once it has been created, it will also be immediately
+stored in the cache for further retrieval using the
+&#8216;classifier&#8217; method.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Ai4r::Classifiers::Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+one of classifiers from the  Ai4r::Classifiers module, depending on the
+value (and presence) of the :algorithm option in the acts_as_cabalist
+method call.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cabalist/model_additions.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id train_model'>train_model</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Wed Apr 25 18:20:18 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>
