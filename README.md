@@ -105,8 +105,8 @@ So far we've used raw data, derived directly from attributes in your model. You 
 ```ruby
 class Cat < ActiveRecord::Base
   # attributes: name, color, gender, good
-  acts_as_cabalist( :features       => [:light_or_dark, :gender],
-                    :class_variable => :good )
+  acts_as_cabalist :features       => [:light_or_dark, :gender],
+                   :class_variable => :good
 
   def light_or_dark
     if %w(white yellow orange grey).include?(color)
