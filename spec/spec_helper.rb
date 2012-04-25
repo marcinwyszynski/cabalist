@@ -10,8 +10,8 @@ ActiveRecord::Base.establish_connection(
   :database => "/tmp/cabalist.sqlite3"
 )
 
-Cabalist.config do |c|
-  c.db_path = '/tmp/cabalist_level.db'
+Cabalist.configure do |config|
+  config.db_path = '/tmp/cabalist_level.db'
 end
 
 RSpec.configure do |config|

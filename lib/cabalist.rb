@@ -6,7 +6,7 @@ require "cabalist/railtie" if defined? Rails
 
 module Cabalist
   
-  def self.config
+  def self.configure
     yield Cabalist::Configuration.instance
   end
   

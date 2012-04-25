@@ -28,7 +28,7 @@ module Cabalist
       end
       if %w(Y y).include?(add_to_gui)
         inject_into_file "config/initializers/cabalist.rb",
-                         "\n  c.frontend_classes << #{name}",
+                         "\n  config.frontend_classes << #{name}",
                          :before => "\nend"
       end
     end

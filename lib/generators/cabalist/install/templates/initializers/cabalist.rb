@@ -1,4 +1,4 @@
 # Setup your Cabalist installation
-Cabalist.config do |c|
-  c.db_path = '/tmp/cabalist.db'
+Cabalist.configure do |config|
+  config.db_path = '/tmp/cabalist.db'
 end
