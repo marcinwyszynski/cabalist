@@ -2,20 +2,25 @@
 
   %h1 Dashboard
 
-  %ul.classifiers
+  .classifiers
     - @classes.each do |klass|
-      %li
-        %ul.specs
-          %lh
-            = klass.to_s
-            classifier
-          %li
-            Classifies the
-            %span.attr_name= klass.classifier.data_set.data_labels[-1]
-            attribute
-          %li
-            = klass.classifier.data_set.data_items.length 
-            data points
-          %li
-            Signals:
-            %span.attr_name= klass.classifier.data_set.data_labels[0...-1].join(', ')
+      .classifier
+        %h3.header= "#{klass.to_s} classifier"
+        .classifier_content
+          %ul.specs
+            %li
+              Classifies the
+              %span.attr_name= klass::get_class_variable_name.to_s
+              attribute
+            %li
+              Features selected:
+              %span.attr_name= klass::get_feature_names.join(', ')
+            %li
+              Trained based on
+              = klass::classifier.data_set.data_items.length 
+              data points from among
+              = klass::count
+              total records of the #{klass.to_s} class
+          .charts
+            = piechart_by_class_variable(klass)
+            = piechart_by_scope(klass)

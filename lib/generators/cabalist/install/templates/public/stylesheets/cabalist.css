@@ -195,3 +195,32 @@ span.label_info {
   display: inline-block;
   width: 130px;
 }
+
+/* Dashboard */
+
+.classifier {
+  border: 1px solid #DDD;
+  margin-bottom: 10px;
+}
+
+.classifier:last-child {
+  margin-bottom: 0px;
+}
+
+.classifier .header {
+  margin: 0px;
+  padding: 3px 8px;
+  border-bottom: 1px solid #ddd;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #DEDEDE), color-stop(100%, #CCC));
+  text-shadow: white 0px 1px 1px;
+}
+
+.classifier .classifier_content {
+  padding: 0px 5px 5px;
+}
+
+.specs {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0.8em;
+}

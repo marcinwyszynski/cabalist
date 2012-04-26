@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Marcin Wyszynski"]
   s.email       = ["marcin.pixie@gmail.com"]
   s.homepage    = "http://github.com/marcinwyszynski/cabalist"
+  s.licenses    = ['MIT']
   s.summary     = %q{Minimum setup machine learning (classification) library for Ruby on Rails applications.}
   s.description = <<-EOF
 Cabalist is conceived as a simple way of adding some smarts 
@@ -15,9 +16,10 @@ Cabalist is conceived as a simple way of adding some smarts
 without having to dig deep into mind-boggling AI algorithms. 
 Using it is meant to be as straightforward as adding a few 
 lines to your existing code and running a Rails generator or two.
-  EOF
+EOF
 
   s.rubyforge_project = "cabalist"
+  s.required_ruby_version = '>= 1.9.2'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -27,6 +29,7 @@ lines to your existing code and running a Rails generator or two.
   # Gem dependencies
   s.add_dependency('ai4r')
   s.add_dependency('haml',     '>= 3.0')
+  s.add_dependency('googlecharts', '>= 1.6.8')
   s.add_dependency('kaminari', '>= 0.13.0')
   s.add_dependency('leveldb-ruby')
   s.add_dependency('padrino-helpers')

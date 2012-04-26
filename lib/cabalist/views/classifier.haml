@@ -52,7 +52,7 @@
                       %span.label_info Use existing class:
                       %select{ :name => 'classification' }
                         %option{ :value    => nil } - choose classification -
-                        - el.class.classifier.data_set.build_domain(-1).to_a.each do |opt|
+                        - el.class.class_variable_domain.to_a.each do |opt|
                           %option{ :value    => opt.to_s, 
                                    :selected => (el.get_class_variable == opt) }= opt
                       %p
@@ -68,7 +68,6 @@
                         :src   => '/images/target_12x12.png', 
                         :title => "Autoclassify (#{el.classify.to_s})" }/
               
-            
     %table.kaminari_nav
       %tr
         %td.previous

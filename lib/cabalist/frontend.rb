@@ -1,3 +1,4 @@
+require 'googlecharts'
 require 'haml'
 require 'kaminari/sinatra'
 require 'padrino-helpers'
@@ -6,7 +7,45 @@ require 'sinatra/base'
 module Cabalist
   class Frontend < Sinatra::Base
     
-    PER_PAGE = 25
+    PER_PAGE      = 25
+    CHART_OPTIONS = { :background      => '00000000',
+                      :colors          => %w(6EB41E 608733 43750A 9AD952 ABD976) +
+                                          %w(188D4B 286A45 085C2C 4AC680 6BC693) +
+                                          %w(AFC220 879136 707E0A D0E054 D4E07A),
+                      :format          => 'image_tag',
+                      :legend_position => 'bottom',
+                      :size            => '400x300' }
+    
+    helpers do
+      
+      def piechart_by_class_variable(klass)
+        data, labels = [], []
+        variable_name = klass::get_class_variable_name
+        klass::all.group_by(&variable_name).each do |k,v|
+          count = v.count
+          labels << "#{k.to_s} (#{count})"
+          data   << count
+        end
+        Gchart::pie({ :bar_colors => CHART_OPTIONS[:colors][0...labels.size],
+                      :data       => data,
+                      :legend     => labels,
+                      :title      => "Breakdown by #{variable_name.to_s}" }.merge(CHART_OPTIONS))
+      end
+      
+      def piechart_by_scope(klass)
+        data, labels = [], []
+        [:manually_classified, :auto_classified, :not_classified].each do |s|
+          count = klass::send(s).count
+          labels << "#{s.to_s} (#{count})"
+          data   << count
+        end
+        Gchart::pie({ :bar_colors => CHART_OPTIONS[:colors][0...labels.size],
+                      :data       => data,
+                      :legend     => labels,
+                      :title      => "Breakdown by classification method" }.merge(CHART_OPTIONS))
+      end
+      
+    end
     
     before do
       @classes  = Cabalist::Configuration.instance.frontend_classes
