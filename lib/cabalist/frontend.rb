@@ -22,8 +22,9 @@ module Cabalist
         data, labels = [], []
         variable_name = klass::get_class_variable_name
         klass::all.group_by(&variable_name).each do |k,v|
+          label = k.nil? '(n/a)' : k.to_s
           count = v.count
-          labels << "#{k.to_s} (#{count})"
+          labels << "#{label} (#{count})"
           data   << count
         end
         Gchart::pie({ :bar_colors => CHART_OPTIONS[:colors][0...labels.size],
