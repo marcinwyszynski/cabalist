@@ -10,6 +10,9 @@
       %a{ :href => "/cabalist/#{klass.to_s.downcase}/manual" } Manually Classified
     %li
       %a{ :href => "/cabalist/#{klass.to_s.downcase}/auto" } Automatically Classified
+    %li.retrain
+      %form.retrain{ :action => "/cabalist/#{klass.to_s.downcase}/retrain", :method => "POST" }
+        %button.retrain Retrain model
 
   - unless @collection.empty?
     %table.cabalist_records

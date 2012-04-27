@@ -224,3 +224,28 @@ span.label_info {
   padding: 0;
   font-size: 0.8em;
 }
+
+ul.scopes { 
+  position: relative;
+}
+
+li.retrain {
+  position: absolute;
+  right: 10px;
+}
+
+button.retrain {
+  border: 0px none;
+  background: none;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  color: #6EB41E;
+  text-shadow: white 0px 1px 1px;
+}
+
+button.retrain:hover {
+  color: white;
+  text-shadow: #888 0px 1px 1px;;
+}
