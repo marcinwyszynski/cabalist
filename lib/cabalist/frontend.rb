@@ -22,7 +22,7 @@ module Cabalist
         data, labels = [], []
         variable_name = klass::get_class_variable_name
         klass::all.group_by(&variable_name).each do |k,v|
-          label = k.nil? 'n/a' : k.to_s
+          label = k.nil? ? 'n/a' : k.to_s
           count = v.count
           labels << "#{label} (#{count})"
           data   << count
