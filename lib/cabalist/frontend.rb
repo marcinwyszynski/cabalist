@@ -65,7 +65,7 @@ module Cabalist
     get "/:class_name/all/?:page?" do
       page = params[:page].to_i < 1 ? 1 : params[:page].to_i
       klass = params[:class_name].titleize.constantize
-      @collection = klass::page(page).per(PER_PAGE)
+      @collection = klass::order("id DESC").page(page).per(PER_PAGE)
       haml :classifier, 
            :locals => { :klass => klass,
                         :page  => page,
@@ -77,7 +77,7 @@ module Cabalist
     get "/:class_name/none/?:page?" do
       klass = params[:class_name].titleize.constantize
       page = params[:page].to_i < 1 ? 1 : params[:page].to_i
-      @collection = klass::not_classified \
+      @collection = klass::not_classified.order("id DESC") \
                     .page(page).per(PER_PAGE)
       haml :classifier, 
            :locals => { :klass => klass,
@@ -90,7 +90,7 @@ module Cabalist
     get "/:class_name/manual/?:page?" do
       klass = params[:class_name].titleize.constantize
       page = params[:page].to_i < 1 ? 1 : params[:page].to_i
-      @collection = klass::manually_classified \
+      @collection = klass::manually_classified.order("id DESC") \
                     .page(page).per(PER_PAGE)
       haml :classifier, 
            :locals => { :klass => klass,
@@ -103,7 +103,7 @@ module Cabalist
     get "/:class_name/auto/?:page?" do
       klass = params[:class_name].titleize.constantize
       page = params[:page].to_i < 1 ? 1 : params[:page].to_i
-      @collection = klass::auto_classified. \
+      @collection = klass::auto_classified.order("autoclassified_at DESC"). \
                     page(page).per(PER_PAGE)
       haml :classifier, 
            :locals => { :klass => klass,
