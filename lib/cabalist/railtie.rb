@@ -9,6 +9,10 @@ module Cabalist
         extend ModelAdditions
       end
     end
+    
+    rake_tasks do
+      load 'tasks/retrain.rake'
+    end
 
   end
 end
