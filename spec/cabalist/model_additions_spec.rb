@@ -57,6 +57,21 @@ describe Cabalist::ModelAdditions do
   it "Should return class variable value domain" do
     Cat::class_variable_domain.should eq [false, true]
   end
+  
+  it "Should return percentage agreement between 0 and 1" do
+    Cat::test_cats
+    Cat::percentage_agreement.should be_between(0, 1)
+  end
+  
+  it "Should return percentage random agreement between 0 and 1" do
+    Cat::test_cats
+    Cat::percentage_random_agreement.should be_between(0, 1)
+  end
+  
+  it "Should return Cohen's kappa between -1 and 1" do
+    Cat::test_cats
+    Cat::cohens_kappa.should be_between(-1, 1)
+  end
   # == END =========================================================== #
   
   # == Test instance methods ========================================= #

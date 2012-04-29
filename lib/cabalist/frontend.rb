@@ -5,9 +5,16 @@ require 'padrino-helpers'
 require 'sinatra/base'
 
 module Cabalist
+  
+  # Provides a web frontend to models where Cabalist functionality has
+  # been enabled.
   class Frontend < Sinatra::Base
     
+    # Specifies how many records of a given class should be visible on a web
+    # GUI page.
     PER_PAGE      = 25
+    
+    # Specifies basic options for the frontend charts to use
     CHART_OPTIONS = { :background      => '00000000',
                       :colors          => %w(6EB41E 608733 43750A 9AD952 ABD976) +
                                           %w(188D4B 286A45 085C2C 4AC680 6BC693) +

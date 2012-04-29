@@ -1,3 +1,6 @@
 module Cabalist
-  VERSION = "0.0.3"
+  
+  # Version of the gem
+  VERSION = "0.0.4"
+  
 end

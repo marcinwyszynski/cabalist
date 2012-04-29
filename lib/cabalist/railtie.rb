@@ -2,6 +2,12 @@ require 'rails'
 require 'active_record'
 
 module Cabalist
+  
+  # This is the link between Rails application and the Cabalist gem
+  #
+  # This Railtie extends ActiveRecord::Base with Cabalist::ModelAdditions
+  # once ActiveRecord is loaded. It also adds relevant Rake tasks to the
+  # application which provide CLI to the Cabalist functionality.
   class Railtie < ::Rails::Railtie
 
     initializer 'cabalist.model_additions' do
