@@ -115,6 +115,7 @@ module Cabalist
     # method of measurement, see the relevant article on
     # Wikipedia[link:http://en.wikipedia.org/wiki/Cohen%27s_kappa].
     # @scope class
+    # @return [Float] Cohen's kappa coefficient
     define_singleton_method(
       :cohens_kappa,
       lambda {
@@ -186,6 +187,7 @@ module Cabalist
     # the classifier and human decision-maker agree. It is one of quality
     # measures of the classifier, albeit a naive one.
     # @scope class
+    # @return [Float] percentage agreement score
     define_singleton_method(
       :percentage_ageement,
       lambda {
@@ -201,6 +203,7 @@ module Cabalist
     # due to sheer randomness rather than actual intelligence reperesented
     # by the classifier.
     # @scope class
+    # @return [Float] percentage random agreement
     define_singleton_method(
       :percentage_random_agreement,
       lambda {
