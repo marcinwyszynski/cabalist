@@ -21,6 +21,9 @@
               data points from among
               = klass::count
               total records of the #{klass.to_s} class
+            %li
+              Classifier quality (Cohen's kappa):
+              = sprintf("%.2f", klass::cohens_kappa)
           .charts
             = piechart_by_class_variable(klass)
             = piechart_by_scope(klass)
