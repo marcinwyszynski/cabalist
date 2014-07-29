@@ -167,9 +167,9 @@ module Cabalist
 
     # Records that have not yet been classified.
     #
-    # Named scope which returns objects that were classified automatically.
-    # That means they have their class variable value set as well as non-nil
-    # value of autoclassified_at attribute.
+    # Named scope which returns objects that have not been classified.
+    # That means that both their class variable and autoclassified_at
+    # attribute are nil.
     #
     # @scope class
     # @return [ActiveRecord::Relation] records that have not yet been
