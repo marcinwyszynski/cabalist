@@ -1,3 +1,7 @@
+NOTE
+------------------------
+This library is __deprecated__ and there will be no further development going on in here. Since the launch of this library AI has become way more accessible and I no longer see a need for a simple wrapper like this.
+
 Introduction to Cabalist [![Build Status](https://secure.travis-ci.org/marcinwyszynski/cabalist.png?branch=master)](http://travis-ci.org/marcinwyszynski/cabalist)
 ------------------------
 
